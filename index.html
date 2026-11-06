@@ -306,8 +306,8 @@
                     // yudao CommonResult：code=0 成功
                     if (data && data.code === 0) {
                         let redirectUrl = data?.data?.link || null;
-                        // 若接口返回 link 且当前环境为微信浏览器，则显示弹窗
-                        if (redirectUrl && /micromessenger/i.test(navigator.userAgent)) {
+                        // 若接口返回 link，则显示弹窗（H5 / 微信均可）
+                        if (redirectUrl) {
                             modal.style.display = 'flex';
                         }
                         if (redirectUrl) {
